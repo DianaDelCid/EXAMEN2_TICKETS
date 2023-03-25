@@ -41,6 +41,9 @@
             this.toolStripEx3 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.tabbedMDIManager1 = new Syncfusion.Windows.Forms.Tools.TabbedMDIManager(this.components);
+            this.backStageView1 = new Syncfusion.Windows.Forms.BackStageView(this.components);
+            this.backStage1 = new Syncfusion.Windows.Forms.BackStage();
+            this.backStageButton1 = new Syncfusion.Windows.Forms.BackStageButton();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv1)).BeginInit();
             this.ribbonControlAdv1.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
@@ -49,10 +52,13 @@
             this.toolStripEx2.SuspendLayout();
             this.toolStripTabItem3.Panel.SuspendLayout();
             this.toolStripEx3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.backStage1)).BeginInit();
+            this.backStage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControlAdv1
             // 
+            this.ribbonControlAdv1.BackStageView = this.backStageView1;
             this.ribbonControlAdv1.CaptionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonControlAdv1.Dock = Syncfusion.Windows.Forms.Tools.DockStyleEx.Top;
             this.ribbonControlAdv1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -61,7 +67,7 @@
             this.ribbonControlAdv1.Header.AddMainItem(toolStripTabItem3);
             this.ribbonControlAdv1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControlAdv1.MenuButtonFont = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ribbonControlAdv1.MenuButtonText = "";
+            this.ribbonControlAdv1.MenuButtonText = "Inicio";
             this.ribbonControlAdv1.MenuButtonWidth = 56;
             this.ribbonControlAdv1.MenuColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(198)))));
             this.ribbonControlAdv1.Name = "ribbonControlAdv1";
@@ -247,16 +253,54 @@
             this.tabbedMDIManager1.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRendererOffice2010);
             this.tabbedMDIManager1.ThemeName = "TabRendererOffice2010";
             // 
+            // backStageView1
+            // 
+            this.backStageView1.BackStage = this.backStage1;
+            this.backStageView1.HostControl = null;
+            this.backStageView1.HostForm = this;
+            // 
+            // backStage1
+            // 
+            this.backStage1.AllowDrop = true;
+            this.backStage1.BeforeTouchSize = new System.Drawing.Size(647, 351);
+            this.backStage1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.backStage1.ChildItemSize = new System.Drawing.Size(80, 140);
+            this.backStage1.Controls.Add(this.backStageButton1);
+            this.backStage1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.backStage1.ItemSize = new System.Drawing.Size(138, 40);
+            this.backStage1.Location = new System.Drawing.Point(4, 53);
+            this.backStage1.MinimumSize = new System.Drawing.Size(100, 53);
+            this.backStage1.Name = "backStage1";
+            this.backStage1.OfficeColorScheme = Syncfusion.Windows.Forms.Tools.ToolStripEx.ColorScheme.Blue;
+            this.backStage1.Size = new System.Drawing.Size(647, 351);
+            this.backStage1.TabIndex = 1;
+            this.backStage1.ThemeName = "BackStage2016Renderer";
+            // 
+            // backStageButton1
+            // 
+            this.backStageButton1.Accelerator = "";
+            this.backStageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.backStageButton1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backStageButton1.Location = new System.Drawing.Point(0, 10);
+            this.backStageButton1.Name = "backStageButton1";
+            this.backStageButton1.Placement = Syncfusion.Windows.Forms.BackStageItemPlacement.Top;
+            this.backStageButton1.Size = new System.Drawing.Size(137, 33);
+            this.backStageButton1.TabIndex = 3;
+            this.backStageButton1.Text = "Salir";
+            this.backStageButton1.Click += new System.EventHandler(this.backStageButton1_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 366);
+            this.Controls.Add(this.backStage1);
             this.Controls.Add(this.ribbonControlAdv1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.IsMdiContainer = true;
             this.Name = "Menu";
             this.Text = "Menu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv1)).EndInit();
             this.ribbonControlAdv1.ResumeLayout(false);
             this.ribbonControlAdv1.PerformLayout();
@@ -272,6 +316,8 @@
             this.toolStripTabItem3.Panel.PerformLayout();
             this.toolStripEx3.ResumeLayout(false);
             this.toolStripEx3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.backStage1)).EndInit();
+            this.backStage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -289,5 +335,8 @@
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx3;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private Syncfusion.Windows.Forms.Tools.TabbedMDIManager tabbedMDIManager1;
+        private Syncfusion.Windows.Forms.BackStageView backStageView1;
+        private Syncfusion.Windows.Forms.BackStage backStage1;
+        private Syncfusion.Windows.Forms.BackStageButton backStageButton1;
     }
 }

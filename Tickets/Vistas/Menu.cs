@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace Vistas
 {
@@ -31,6 +32,11 @@ namespace Vistas
             TicketForm ticketForm = new TicketForm();
             ticketForm.MdiParent = this;
             ticketForm.Show();
+        }
+
+        private void backStageButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

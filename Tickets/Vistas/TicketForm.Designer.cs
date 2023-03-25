@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TicketForm));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -35,7 +36,6 @@
             this.UsuarioTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.BuscarClienteButton = new System.Windows.Forms.Button();
             this.NombreClienteTextBox = new System.Windows.Forms.TextBox();
             this.IdentidadTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,16 +49,19 @@
             this.TipoSoporteComboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.DetalleDataGridView = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.CrearTicketButton = new System.Windows.Forms.Button();
+            this.CancelarButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.SubtotalTextBox = new System.Windows.Forms.TextBox();
+            this.ISVTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.DescuentoTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TotalAPagarTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.BuscarClienteButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -93,7 +96,7 @@
             // FechaDateTimePicker
             // 
             this.FechaDateTimePicker.CalendarFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaDateTimePicker.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaDateTimePicker.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.FechaDateTimePicker.Location = new System.Drawing.Point(817, 19);
             this.FechaDateTimePicker.Name = "FechaDateTimePicker";
@@ -111,7 +114,7 @@
             // 
             // UsuarioTextBox
             // 
-            this.UsuarioTextBox.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsuarioTextBox.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsuarioTextBox.Location = new System.Drawing.Point(79, 18);
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.ReadOnly = true;
@@ -129,32 +132,22 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(235)))), ((int)(((byte)(233)))));
             this.groupBox2.Controls.Add(this.BuscarClienteButton);
             this.groupBox2.Controls.Add(this.NombreClienteTextBox);
             this.groupBox2.Controls.Add(this.IdentidadTextBox);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(10, 108);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(312, 122);
+            this.groupBox2.Size = new System.Drawing.Size(312, 131);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información de Cliente";
             // 
-            // BuscarClienteButton
-            // 
-            this.BuscarClienteButton.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BuscarClienteButton.Image = global::Vistas.Properties.Resources.buscar;
-            this.BuscarClienteButton.Location = new System.Drawing.Point(259, 45);
-            this.BuscarClienteButton.Name = "BuscarClienteButton";
-            this.BuscarClienteButton.Size = new System.Drawing.Size(38, 34);
-            this.BuscarClienteButton.TabIndex = 3;
-            this.BuscarClienteButton.UseVisualStyleBackColor = false;
-            this.BuscarClienteButton.Click += new System.EventHandler(this.BuscarClienteButton_Click);
-            // 
             // NombreClienteTextBox
             // 
-            this.NombreClienteTextBox.Font = new System.Drawing.Font("Candara", 11.25F);
-            this.NombreClienteTextBox.Location = new System.Drawing.Point(10, 85);
+            this.NombreClienteTextBox.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NombreClienteTextBox.Location = new System.Drawing.Point(10, 91);
             this.NombreClienteTextBox.Name = "NombreClienteTextBox";
             this.NombreClienteTextBox.ReadOnly = true;
             this.NombreClienteTextBox.Size = new System.Drawing.Size(287, 26);
@@ -162,8 +155,8 @@
             // 
             // IdentidadTextBox
             // 
-            this.IdentidadTextBox.Font = new System.Drawing.Font("Candara", 11.25F);
-            this.IdentidadTextBox.Location = new System.Drawing.Point(10, 49);
+            this.IdentidadTextBox.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IdentidadTextBox.Location = new System.Drawing.Point(10, 53);
             this.IdentidadTextBox.Name = "IdentidadTextBox";
             this.IdentidadTextBox.Size = new System.Drawing.Size(245, 26);
             this.IdentidadTextBox.TabIndex = 1;
@@ -172,7 +165,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 27);
+            this.label4.Location = new System.Drawing.Point(14, 29);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 19);
             this.label4.TabIndex = 0;
@@ -180,6 +173,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(235)))), ((int)(((byte)(233)))));
             this.groupBox3.Controls.Add(this.PrecioTextBox);
             this.groupBox3.Controls.Add(this.DescripcionRespuestaTextBox);
             this.groupBox3.Controls.Add(this.DescripcionSolicitudTextBox);
@@ -249,11 +243,12 @@
             // 
             // TipoSoporteComboBox
             // 
+            this.TipoSoporteComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoSoporteComboBox.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TipoSoporteComboBox.FormattingEnabled = true;
             this.TipoSoporteComboBox.Items.AddRange(new object[] {
-            "Celulares",
-            "Equipo de Cómputo"});
+            "Equipo de Cómputo",
+            "Celulares"});
             this.TipoSoporteComboBox.Location = new System.Drawing.Point(128, 18);
             this.TipoSoporteComboBox.Name = "TipoSoporteComboBox";
             this.TipoSoporteComboBox.Size = new System.Drawing.Size(150, 26);
@@ -270,106 +265,135 @@
             // 
             // DetalleDataGridView
             // 
-            this.DetalleDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.DetalleDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DetalleDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.DetalleDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(235)))), ((int)(((byte)(233)))));
             this.DetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DetalleDataGridView.Location = new System.Drawing.Point(-4, 245);
+            this.DetalleDataGridView.Location = new System.Drawing.Point(-1, 247);
             this.DetalleDataGridView.Name = "DetalleDataGridView";
-            this.DetalleDataGridView.Size = new System.Drawing.Size(1037, 150);
+            this.DetalleDataGridView.Size = new System.Drawing.Size(1020, 150);
             this.DetalleDataGridView.TabIndex = 4;
             // 
-            // button1
+            // CrearTicketButton
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button1.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(17, 483);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 36);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Crear Tickect";
-            this.button1.UseVisualStyleBackColor = false;
+            this.CrearTicketButton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.CrearTicketButton.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CrearTicketButton.ForeColor = System.Drawing.Color.White;
+            this.CrearTicketButton.Location = new System.Drawing.Point(17, 483);
+            this.CrearTicketButton.Name = "CrearTicketButton";
+            this.CrearTicketButton.Size = new System.Drawing.Size(111, 36);
+            this.CrearTicketButton.TabIndex = 5;
+            this.CrearTicketButton.Text = "Crear Tickect";
+            this.CrearTicketButton.UseVisualStyleBackColor = false;
+            this.CrearTicketButton.Click += new System.EventHandler(this.CrearTicketButton_Click);
             // 
-            // button2
+            // CancelarButton
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(134, 483);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 36);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.CancelarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.CancelarButton.ForeColor = System.Drawing.Color.White;
+            this.CancelarButton.Location = new System.Drawing.Point(134, 483);
+            this.CancelarButton.Name = "CancelarButton";
+            this.CancelarButton.Size = new System.Drawing.Size(108, 36);
+            this.CancelarButton.TabIndex = 6;
+            this.CancelarButton.Text = "Cancelar";
+            this.CancelarButton.UseVisualStyleBackColor = false;
+            this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(779, 407);
+            this.label5.Location = new System.Drawing.Point(801, 408);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 19);
             this.label5.TabIndex = 7;
             this.label5.Text = "Sub Total:";
             // 
-            // textBox1
+            // SubtotalTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Candara", 11.25F);
-            this.textBox1.Location = new System.Drawing.Point(880, 403);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 26);
-            this.textBox1.TabIndex = 8;
+            this.SubtotalTextBox.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubtotalTextBox.Location = new System.Drawing.Point(902, 404);
+            this.SubtotalTextBox.Name = "SubtotalTextBox";
+            this.SubtotalTextBox.ReadOnly = true;
+            this.SubtotalTextBox.Size = new System.Drawing.Size(117, 26);
+            this.SubtotalTextBox.TabIndex = 8;
             // 
-            // textBox2
+            // ISVTextBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Candara", 11.25F);
-            this.textBox2.Location = new System.Drawing.Point(880, 435);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(117, 26);
-            this.textBox2.TabIndex = 10;
+            this.ISVTextBox.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ISVTextBox.Location = new System.Drawing.Point(902, 436);
+            this.ISVTextBox.Name = "ISVTextBox";
+            this.ISVTextBox.ReadOnly = true;
+            this.ISVTextBox.Size = new System.Drawing.Size(117, 26);
+            this.ISVTextBox.TabIndex = 10;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(779, 439);
+            this.label6.Location = new System.Drawing.Point(801, 440);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 19);
             this.label6.TabIndex = 9;
             this.label6.Text = "ISV:";
             // 
-            // textBox3
+            // DescuentoTextBox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Candara", 11.25F);
-            this.textBox3.Location = new System.Drawing.Point(880, 467);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(117, 26);
-            this.textBox3.TabIndex = 12;
+            this.DescuentoTextBox.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescuentoTextBox.Location = new System.Drawing.Point(902, 468);
+            this.DescuentoTextBox.Name = "DescuentoTextBox";
+            this.DescuentoTextBox.Size = new System.Drawing.Size(117, 26);
+            this.DescuentoTextBox.TabIndex = 12;
+            this.DescuentoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescuentoTextBox_KeyPress);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(779, 471);
+            this.label7.Location = new System.Drawing.Point(801, 472);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 19);
             this.label7.TabIndex = 11;
             this.label7.Text = "Descuento:";
             // 
-            // textBox4
+            // TotalAPagarTextBox
             // 
-            this.textBox4.Font = new System.Drawing.Font("Candara", 11.25F);
-            this.textBox4.Location = new System.Drawing.Point(880, 499);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(117, 26);
-            this.textBox4.TabIndex = 14;
+            this.TotalAPagarTextBox.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalAPagarTextBox.Location = new System.Drawing.Point(902, 500);
+            this.TotalAPagarTextBox.Name = "TotalAPagarTextBox";
+            this.TotalAPagarTextBox.ReadOnly = true;
+            this.TotalAPagarTextBox.Size = new System.Drawing.Size(117, 26);
+            this.TotalAPagarTextBox.TabIndex = 14;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(779, 503);
+            this.label8.Location = new System.Drawing.Point(801, 504);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(101, 19);
             this.label8.TabIndex = 13;
             this.label8.Text = "Total a Pagar:";
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // BuscarClienteButton
+            // 
+            this.BuscarClienteButton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BuscarClienteButton.Image = global::Vistas.Properties.Resources.buscar;
+            this.BuscarClienteButton.Location = new System.Drawing.Point(259, 49);
+            this.BuscarClienteButton.Name = "BuscarClienteButton";
+            this.BuscarClienteButton.Size = new System.Drawing.Size(38, 34);
+            this.BuscarClienteButton.TabIndex = 3;
+            this.BuscarClienteButton.UseVisualStyleBackColor = false;
+            this.BuscarClienteButton.Click += new System.EventHandler(this.BuscarClienteButton_Click);
             // 
             // TicketForm
             // 
@@ -377,16 +401,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(213)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(1031, 529);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.TotalAPagarTextBox);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.DescuentoTextBox);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.ISVTextBox);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.SubtotalTextBox);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.CancelarButton);
+            this.Controls.Add(this.CrearTicketButton);
             this.Controls.Add(this.DetalleDataGridView);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -424,15 +448,15 @@
         private System.Windows.Forms.Button BuscarClienteButton;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView DetalleDataGridView;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button CrearTicketButton;
+        private System.Windows.Forms.Button CancelarButton;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox SubtotalTextBox;
+        private System.Windows.Forms.TextBox ISVTextBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox DescuentoTextBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TotalAPagarTextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox TipoSoporteComboBox;
         private System.Windows.Forms.Label label9;
@@ -442,5 +466,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

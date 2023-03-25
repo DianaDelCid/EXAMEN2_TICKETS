@@ -47,6 +47,7 @@
             // 
             // NombreTextBox
             // 
+            this.NombreTextBox.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NombreTextBox.Location = new System.Drawing.Point(99, 18);
             this.NombreTextBox.Name = "NombreTextBox";
             this.NombreTextBox.Size = new System.Drawing.Size(468, 26);
@@ -103,7 +104,7 @@
             this.Controls.Add(this.NombreTextBox);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Century", 11.25F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BuscarClienteForm";
             this.Text = "BuscarClienteForm";
             this.Load += new System.EventHandler(this.BuscarClienteForm_Load);

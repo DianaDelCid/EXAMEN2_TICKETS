@@ -241,5 +241,6 @@ namespace Vistas
                 FotoClientePictureBox.Image = Image.FromFile(dialog.FileName);//file name para capturar nombre del archivo
             }
         }
+
     }
 }

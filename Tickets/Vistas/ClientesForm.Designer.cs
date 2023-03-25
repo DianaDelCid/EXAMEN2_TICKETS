@@ -43,8 +43,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.EstaActivoCheckBox = new System.Windows.Forms.CheckBox();
             this.FechaNacimientoDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.FotoClientePictureBox = new System.Windows.Forms.PictureBox();
-            this.AgregarFotoButton = new System.Windows.Forms.Button();
             this.ClientesDataGridView = new System.Windows.Forms.DataGridView();
             this.CancelarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
@@ -52,9 +50,12 @@
             this.ModificarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.FotoClientePictureBox)).BeginInit();
+            this.AgregarFotoButton = new System.Windows.Forms.Button();
+            this.FotoClientePictureBox = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ClientesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FotoClientePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -186,98 +187,125 @@
             this.FechaNacimientoDateTimePicker.Size = new System.Drawing.Size(258, 23);
             this.FechaNacimientoDateTimePicker.TabIndex = 14;
             // 
-            // FotoClientePictureBox
-            // 
-            this.FotoClientePictureBox.BackColor = System.Drawing.Color.White;
-            this.FotoClientePictureBox.Location = new System.Drawing.Point(393, 14);
-            this.FotoClientePictureBox.Name = "FotoClientePictureBox";
-            this.FotoClientePictureBox.Size = new System.Drawing.Size(197, 159);
-            this.FotoClientePictureBox.TabIndex = 15;
-            this.FotoClientePictureBox.TabStop = false;
-            // 
-            // AgregarFotoButton
-            // 
-            this.AgregarFotoButton.Enabled = false;
-            this.AgregarFotoButton.Image = global::Vistas.Properties.Resources.buscar;
-            this.AgregarFotoButton.Location = new System.Drawing.Point(596, 138);
-            this.AgregarFotoButton.Name = "AgregarFotoButton";
-            this.AgregarFotoButton.Size = new System.Drawing.Size(40, 35);
-            this.AgregarFotoButton.TabIndex = 16;
-            this.AgregarFotoButton.UseVisualStyleBackColor = true;
-            this.AgregarFotoButton.Click += new System.EventHandler(this.AgregarFotoButton_Click);
-            // 
             // ClientesDataGridView
             // 
-            this.ClientesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.ClientesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ClientesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(235)))), ((int)(((byte)(233)))));
             this.ClientesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ClientesDataGridView.Location = new System.Drawing.Point(-2, 292);
             this.ClientesDataGridView.Name = "ClientesDataGridView";
-            this.ClientesDataGridView.Size = new System.Drawing.Size(652, 158);
+            this.ClientesDataGridView.Size = new System.Drawing.Size(634, 158);
             this.ClientesDataGridView.TabIndex = 17;
             // 
             // CancelarButton
             // 
+            this.CancelarButton.BackColor = System.Drawing.Color.Teal;
             this.CancelarButton.Enabled = false;
-            this.CancelarButton.Location = new System.Drawing.Point(457, 244);
+            this.CancelarButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelarButton.ForeColor = System.Drawing.Color.White;
+            this.CancelarButton.Location = new System.Drawing.Point(456, 247);
             this.CancelarButton.Name = "CancelarButton";
             this.CancelarButton.Size = new System.Drawing.Size(84, 31);
             this.CancelarButton.TabIndex = 28;
             this.CancelarButton.Text = "Cancelar";
-            this.CancelarButton.UseVisualStyleBackColor = true;
+            this.CancelarButton.UseVisualStyleBackColor = false;
             this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
             // 
             // EliminarButton
             // 
-            this.EliminarButton.Location = new System.Drawing.Point(368, 244);
+            this.EliminarButton.BackColor = System.Drawing.Color.Teal;
+            this.EliminarButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EliminarButton.ForeColor = System.Drawing.Color.White;
+            this.EliminarButton.Location = new System.Drawing.Point(367, 247);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(85, 31);
             this.EliminarButton.TabIndex = 27;
             this.EliminarButton.Text = "Eliminar";
-            this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.UseVisualStyleBackColor = false;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
+            this.GuardarButton.BackColor = System.Drawing.Color.Teal;
             this.GuardarButton.Enabled = false;
-            this.GuardarButton.Location = new System.Drawing.Point(283, 244);
+            this.GuardarButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GuardarButton.ForeColor = System.Drawing.Color.White;
+            this.GuardarButton.Location = new System.Drawing.Point(282, 247);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(79, 31);
             this.GuardarButton.TabIndex = 26;
             this.GuardarButton.Text = "Guardar";
-            this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.UseVisualStyleBackColor = false;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // ModificarButton
             // 
-            this.ModificarButton.Location = new System.Drawing.Point(188, 244);
+            this.ModificarButton.BackColor = System.Drawing.Color.Teal;
+            this.ModificarButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ModificarButton.ForeColor = System.Drawing.Color.White;
+            this.ModificarButton.Location = new System.Drawing.Point(187, 247);
             this.ModificarButton.Name = "ModificarButton";
             this.ModificarButton.Size = new System.Drawing.Size(89, 31);
             this.ModificarButton.TabIndex = 25;
             this.ModificarButton.Text = "Modificar";
-            this.ModificarButton.UseVisualStyleBackColor = true;
+            this.ModificarButton.UseVisualStyleBackColor = false;
             this.ModificarButton.Click += new System.EventHandler(this.ModificarButton_Click);
             // 
             // NuevoButton
             // 
-            this.NuevoButton.Location = new System.Drawing.Point(107, 244);
+            this.NuevoButton.BackColor = System.Drawing.Color.Teal;
+            this.NuevoButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NuevoButton.ForeColor = System.Drawing.Color.White;
+            this.NuevoButton.Location = new System.Drawing.Point(106, 247);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(75, 31);
             this.NuevoButton.TabIndex = 24;
             this.NuevoButton.Text = "Nuevo";
-            this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.UseVisualStyleBackColor = false;
             this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // AgregarFotoButton
+            // 
+            this.AgregarFotoButton.BackColor = System.Drawing.Color.Teal;
+            this.AgregarFotoButton.Enabled = false;
+            this.AgregarFotoButton.Image = global::Vistas.Properties.Resources.buscar;
+            this.AgregarFotoButton.Location = new System.Drawing.Point(573, 156);
+            this.AgregarFotoButton.Name = "AgregarFotoButton";
+            this.AgregarFotoButton.Size = new System.Drawing.Size(40, 35);
+            this.AgregarFotoButton.TabIndex = 16;
+            this.AgregarFotoButton.UseVisualStyleBackColor = false;
+            this.AgregarFotoButton.Click += new System.EventHandler(this.AgregarFotoButton_Click);
+            // 
+            // FotoClientePictureBox
+            // 
+            this.FotoClientePictureBox.BackColor = System.Drawing.Color.White;
+            this.FotoClientePictureBox.Location = new System.Drawing.Point(398, 45);
+            this.FotoClientePictureBox.Name = "FotoClientePictureBox";
+            this.FotoClientePictureBox.Size = new System.Drawing.Size(169, 146);
+            this.FotoClientePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.FotoClientePictureBox.TabIndex = 15;
+            this.FotoClientePictureBox.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(463, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 18);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Foto";
+            // 
             // ClientesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 449);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(213)))), ((int)(((byte)(223)))));
+            this.ClientSize = new System.Drawing.Size(630, 449);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.CancelarButton);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
@@ -301,13 +329,13 @@
             this.Controls.Add(this.IdentidadTextBox);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Century", 11.25F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ClientesForm";
             this.Text = "ClientesForm";
             this.Load += new System.EventHandler(this.ClientesForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.FotoClientePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FotoClientePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,5 +366,6 @@
         private System.Windows.Forms.Button ModificarButton;
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label8;
     }
 }
