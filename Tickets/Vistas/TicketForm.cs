@@ -49,7 +49,7 @@ namespace Vistas
         //EVENTO KEYPRESS PARA BUSCAR EL CLIENTE CUANDO DAMOS ENTER
         private void IdentidadTextBox_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter && !string.IsNullOrEmpty(IdentidadTextBox.Text)) //si keychar es enter Y a ingresado aldo va a buscar al objeto cliente
+            if (e.KeyChar == (char)Keys.Enter && !string.IsNullOrEmpty(IdentidadTextBox.Text)) //si keychar es enter Y a ingresado algo va a buscar al objeto cliente
             {
                 miCliente = new Clientes(); //instanciamos el objeto cliente
                 miCliente = clienteDB.DevolverClientePorIdentidad(IdentidadTextBox.Text); //llamamos el metodo para buscar por identidad
@@ -98,7 +98,51 @@ namespace Vistas
 
 
             //VALIDAMOS QUE DESPUES DE DAR ENTER MUESTRE EL DETALLE DEL TICKET
-            if (e.KeyChar == (char)Keys.Enter && !string.IsNullOrEmpty(PrecioTextBox.Text))
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (!string.IsNullOrEmpty(PrecioTextBox.Text) && !string.IsNullOrEmpty(TipoSoporteComboBox.Text) && !string.IsNullOrEmpty(DescripcionSolicitudTextBox.Text) && !string.IsNullOrEmpty(DescripcionRespuestaTextBox.Text))
+                {
+                    //AGREGAR SOPORTE
+                    DetalleTicket detalle = new DetalleTicket(); //instancioms un objeto del detalle
+                    detalle.TipoSoporte = TipoSoporteComboBox.Text;
+                    detalle.DescripcionSolicitud = DescripcionSolicitudTextBox.Text;
+                    detalle.DescripcionRespuesta = DescripcionRespuestaTextBox.Text;
+                    detalle.Precio = Convert.ToDecimal(PrecioTextBox.Text);
+                    detalle.Total = detalle.Precio;
+
+                    //acumula cada vez que se ingresa productos
+                    subTotal += detalle.Total;
+                    isv = subTotal * 0.15M; //agregamos M para que sea decimal
+                    totalAPagar = subTotal + isv;
+
+                    listaDetalles.Add(detalle); //A la lista detalles le agregamos el objeto detalle
+
+                    DetalleDataGridView.DataSource = null;
+                    DetalleDataGridView.DataSource = listaDetalles;
+
+                    //le pasamos a cada uno de los controles
+                    SubtotalTextBox.Text = subTotal.ToString("N2"); //pasmos un formateador de tostring N2(para millares y decimales)
+                    ISVTextBox.Text = isv.ToString("N2");
+                    TotalAPagarTextBox.Text = totalAPagar.ToString("N2");
+
+                    //Limpiamos los controles
+                    TipoSoporteComboBox.Text = "";
+                    DescripcionSolicitudTextBox.Clear();
+                    DescripcionRespuestaTextBox.Clear();
+                    PrecioTextBox.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Debe Ingresar todos los Datos de Detalle", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+            }
+
+        }
+
+        private void AgregarButton_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(PrecioTextBox.Text) && !string.IsNullOrEmpty(TipoSoporteComboBox.Text) && !string.IsNullOrEmpty(DescripcionSolicitudTextBox.Text) && !string.IsNullOrEmpty(DescripcionRespuestaTextBox.Text))
             {
                 //AGREGAR SOPORTE
                 DetalleTicket detalle = new DetalleTicket(); //instancioms un objeto del detalle
@@ -129,6 +173,10 @@ namespace Vistas
                 DescripcionRespuestaTextBox.Clear();
                 PrecioTextBox.Clear();
 
+            }
+            else
+            {
+                MessageBox.Show("Debe Ingresar todos los Datos de Detalle", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -234,5 +282,6 @@ namespace Vistas
 
             }
         }
+
     }
 }

@@ -53,9 +53,11 @@
             this.AgregarFotoButton = new System.Windows.Forms.Button();
             this.FotoClientePictureBox = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.IconoPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ClientesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FotoClientePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -189,12 +191,14 @@
             // 
             // ClientesDataGridView
             // 
+            this.ClientesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ClientesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ClientesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(235)))), ((int)(((byte)(233)))));
             this.ClientesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ClientesDataGridView.Location = new System.Drawing.Point(-2, 292);
             this.ClientesDataGridView.Name = "ClientesDataGridView";
-            this.ClientesDataGridView.Size = new System.Drawing.Size(634, 158);
+            this.ClientesDataGridView.Size = new System.Drawing.Size(634, 189);
             this.ClientesDataGridView.TabIndex = 17;
             // 
             // CancelarButton
@@ -299,12 +303,24 @@
             this.label8.TabIndex = 29;
             this.label8.Text = "Foto";
             // 
+            // IconoPictureBox
+            // 
+            this.IconoPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(213)))), ((int)(((byte)(223)))));
+            this.IconoPictureBox.Image = global::Vistas.Properties.Resources.icono;
+            this.IconoPictureBox.Location = new System.Drawing.Point(703, 39);
+            this.IconoPictureBox.Name = "IconoPictureBox";
+            this.IconoPictureBox.Size = new System.Drawing.Size(192, 192);
+            this.IconoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.IconoPictureBox.TabIndex = 30;
+            this.IconoPictureBox.TabStop = false;
+            // 
             // ClientesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(213)))), ((int)(((byte)(223)))));
-            this.ClientSize = new System.Drawing.Size(630, 449);
+            this.ClientSize = new System.Drawing.Size(961, 477);
+            this.Controls.Add(this.IconoPictureBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.CancelarButton);
             this.Controls.Add(this.EliminarButton);
@@ -336,6 +352,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ClientesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FotoClientePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,5 +384,6 @@
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox IconoPictureBox;
     }
 }

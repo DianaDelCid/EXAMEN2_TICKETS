@@ -34,15 +34,15 @@
             this.UsuarioTextBox = new System.Windows.Forms.TextBox();
             this.ContraseñaTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.VisualizarContraseñaButton = new System.Windows.Forms.Button();
-            this.LoginPictureBox = new System.Windows.Forms.PictureBox();
-            this.CancelarButton = new System.Windows.Forms.Button();
-            this.AceptarButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.LoginPictureBox)).BeginInit();
+            this.AceptarButton = new System.Windows.Forms.Button();
+            this.CancelarButton = new System.Windows.Forms.Button();
+            this.VisualizarContraseñaButton = new System.Windows.Forms.Button();
+            this.LoginPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LoginPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -97,61 +97,6 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Bienvenido";
             // 
-            // VisualizarContraseñaButton
-            // 
-            this.VisualizarContraseñaButton.BackColor = System.Drawing.Color.LightGray;
-            this.VisualizarContraseñaButton.Image = global::Vistas.Properties.Resources.ojo;
-            this.VisualizarContraseñaButton.Location = new System.Drawing.Point(242, 131);
-            this.VisualizarContraseñaButton.Name = "VisualizarContraseñaButton";
-            this.VisualizarContraseñaButton.Size = new System.Drawing.Size(33, 28);
-            this.VisualizarContraseñaButton.TabIndex = 8;
-            this.VisualizarContraseñaButton.UseVisualStyleBackColor = false;
-            this.VisualizarContraseñaButton.Click += new System.EventHandler(this.VisualizarContraseñaButton_Click);
-            // 
-            // LoginPictureBox
-            // 
-            this.LoginPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(213)))), ((int)(((byte)(223)))));
-            this.LoginPictureBox.Image = global::Vistas.Properties.Resources.usuario;
-            this.LoginPictureBox.Location = new System.Drawing.Point(285, 61);
-            this.LoginPictureBox.Name = "LoginPictureBox";
-            this.LoginPictureBox.Size = new System.Drawing.Size(97, 96);
-            this.LoginPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.LoginPictureBox.TabIndex = 6;
-            this.LoginPictureBox.TabStop = false;
-            // 
-            // CancelarButton
-            // 
-            this.CancelarButton.BackColor = System.Drawing.Color.Navy;
-            this.CancelarButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CancelarButton.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CancelarButton.ForeColor = System.Drawing.Color.White;
-            this.CancelarButton.Image = global::Vistas.Properties.Resources.cancelar;
-            this.CancelarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CancelarButton.Location = new System.Drawing.Point(208, 178);
-            this.CancelarButton.Name = "CancelarButton";
-            this.CancelarButton.Size = new System.Drawing.Size(102, 34);
-            this.CancelarButton.TabIndex = 5;
-            this.CancelarButton.Text = "Cancelar";
-            this.CancelarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CancelarButton.UseVisualStyleBackColor = false;
-            this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
-            // 
-            // AceptarButton
-            // 
-            this.AceptarButton.BackColor = System.Drawing.Color.Navy;
-            this.AceptarButton.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AceptarButton.ForeColor = System.Drawing.Color.White;
-            this.AceptarButton.Image = global::Vistas.Properties.Resources.aceptar;
-            this.AceptarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AceptarButton.Location = new System.Drawing.Point(93, 178);
-            this.AceptarButton.Name = "AceptarButton";
-            this.AceptarButton.Size = new System.Drawing.Size(101, 34);
-            this.AceptarButton.TabIndex = 4;
-            this.AceptarButton.Text = "Aceptar";
-            this.AceptarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AceptarButton.UseVisualStyleBackColor = false;
-            this.AceptarButton.Click += new System.EventHandler(this.AceptarButton_Click);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -178,6 +123,62 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Empresa Tecnology";
             // 
+            // AceptarButton
+            // 
+            this.AceptarButton.BackColor = System.Drawing.Color.Navy;
+            this.AceptarButton.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AceptarButton.ForeColor = System.Drawing.Color.White;
+            this.AceptarButton.Image = global::Vistas.Properties.Resources.aceptar;
+            this.AceptarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AceptarButton.Location = new System.Drawing.Point(93, 178);
+            this.AceptarButton.Name = "AceptarButton";
+            this.AceptarButton.Size = new System.Drawing.Size(101, 36);
+            this.AceptarButton.TabIndex = 4;
+            this.AceptarButton.Text = "Aceptar";
+            this.AceptarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AceptarButton.UseVisualStyleBackColor = false;
+            this.AceptarButton.Click += new System.EventHandler(this.AceptarButton_Click);
+            // 
+            // CancelarButton
+            // 
+            this.CancelarButton.BackColor = System.Drawing.Color.Navy;
+            this.CancelarButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.CancelarButton.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelarButton.ForeColor = System.Drawing.Color.White;
+            this.CancelarButton.Image = global::Vistas.Properties.Resources.cancelar;
+            this.CancelarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CancelarButton.Location = new System.Drawing.Point(208, 178);
+            this.CancelarButton.Name = "CancelarButton";
+            this.CancelarButton.Size = new System.Drawing.Size(102, 36);
+            this.CancelarButton.TabIndex = 5;
+            this.CancelarButton.Text = "Cancelar";
+            this.CancelarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CancelarButton.UseVisualStyleBackColor = false;
+            this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
+            // 
+            // VisualizarContraseñaButton
+            // 
+            this.VisualizarContraseñaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(213)))), ((int)(((byte)(223)))));
+            this.VisualizarContraseñaButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.VisualizarContraseñaButton.Image = global::Vistas.Properties.Resources.ojo;
+            this.VisualizarContraseñaButton.Location = new System.Drawing.Point(242, 131);
+            this.VisualizarContraseñaButton.Name = "VisualizarContraseñaButton";
+            this.VisualizarContraseñaButton.Size = new System.Drawing.Size(33, 28);
+            this.VisualizarContraseñaButton.TabIndex = 8;
+            this.VisualizarContraseñaButton.UseVisualStyleBackColor = false;
+            this.VisualizarContraseñaButton.Click += new System.EventHandler(this.VisualizarContraseñaButton_Click);
+            // 
+            // LoginPictureBox
+            // 
+            this.LoginPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(213)))), ((int)(((byte)(223)))));
+            this.LoginPictureBox.Image = global::Vistas.Properties.Resources.usuario;
+            this.LoginPictureBox.Location = new System.Drawing.Point(285, 61);
+            this.LoginPictureBox.Name = "LoginPictureBox";
+            this.LoginPictureBox.Size = new System.Drawing.Size(97, 96);
+            this.LoginPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LoginPictureBox.TabIndex = 6;
+            this.LoginPictureBox.TabStop = false;
+            // 
             // LoginForm
             // 
             this.AcceptButton = this.AceptarButton;
@@ -203,8 +204,8 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.LoginPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LoginPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

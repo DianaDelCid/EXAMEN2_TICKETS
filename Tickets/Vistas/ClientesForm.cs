@@ -203,7 +203,7 @@ namespace Vistas
             //Validar que usuario seleccione un registro
             if (ClientesDataGridView.SelectedRows.Count > 0)
             {
-                DialogResult resultado = MessageBox.Show("Esta seguro de eliminar el registro", "Advertencia", MessageBoxButtons.YesNo); //ventana para verificar
+                DialogResult resultado = MessageBox.Show("Esta seguro de eliminar el registro", "Continúa ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question); //ventana para verificar
 
                 if (resultado == DialogResult.Yes) //si es un si
                 {
@@ -214,11 +214,11 @@ namespace Vistas
                         LimpiarControles();
                         DeshabilitarControles();
                         TraerClientes();
-                        MessageBox.Show("Registro Eliminado");
+                        MessageBox.Show("Registro Eliminado", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo eliminar registro");
+                        MessageBox.Show("No se pudo eliminar registro", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 //Si no, no hace nada

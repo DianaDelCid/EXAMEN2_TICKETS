@@ -36,10 +36,12 @@
             this.UsuarioTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BuscarClienteButton = new System.Windows.Forms.Button();
             this.NombreClienteTextBox = new System.Windows.Forms.TextBox();
             this.IdentidadTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.AgregarButton = new System.Windows.Forms.Button();
             this.PrecioTextBox = new System.Windows.Forms.TextBox();
             this.DescripcionRespuestaTextBox = new System.Windows.Forms.TextBox();
             this.DescripcionSolicitudTextBox = new System.Windows.Forms.TextBox();
@@ -61,11 +63,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.BuscarClienteButton = new System.Windows.Forms.Button();
+            this.IconoPictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -144,6 +147,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información de Cliente";
             // 
+            // BuscarClienteButton
+            // 
+            this.BuscarClienteButton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BuscarClienteButton.Image = global::Vistas.Properties.Resources.buscar;
+            this.BuscarClienteButton.Location = new System.Drawing.Point(259, 49);
+            this.BuscarClienteButton.Name = "BuscarClienteButton";
+            this.BuscarClienteButton.Size = new System.Drawing.Size(38, 34);
+            this.BuscarClienteButton.TabIndex = 3;
+            this.BuscarClienteButton.UseVisualStyleBackColor = false;
+            this.BuscarClienteButton.Click += new System.EventHandler(this.BuscarClienteButton_Click);
+            // 
             // NombreClienteTextBox
             // 
             this.NombreClienteTextBox.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -174,6 +188,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(235)))), ((int)(((byte)(233)))));
+            this.groupBox3.Controls.Add(this.AgregarButton);
             this.groupBox3.Controls.Add(this.PrecioTextBox);
             this.groupBox3.Controls.Add(this.DescripcionRespuestaTextBox);
             this.groupBox3.Controls.Add(this.DescripcionSolicitudTextBox);
@@ -189,12 +204,23 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalle Ticket";
             // 
+            // AgregarButton
+            // 
+            this.AgregarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(235)))), ((int)(((byte)(233)))));
+            this.AgregarButton.Image = global::Vistas.Properties.Resources.aceptar;
+            this.AgregarButton.Location = new System.Drawing.Point(624, 17);
+            this.AgregarButton.Name = "AgregarButton";
+            this.AgregarButton.Size = new System.Drawing.Size(35, 32);
+            this.AgregarButton.TabIndex = 8;
+            this.AgregarButton.UseVisualStyleBackColor = false;
+            this.AgregarButton.Click += new System.EventHandler(this.AgregarButton_Click);
+            // 
             // PrecioTextBox
             // 
             this.PrecioTextBox.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrecioTextBox.Location = new System.Drawing.Point(429, 18);
+            this.PrecioTextBox.Location = new System.Drawing.Point(404, 20);
             this.PrecioTextBox.Name = "PrecioTextBox";
-            this.PrecioTextBox.Size = new System.Drawing.Size(230, 26);
+            this.PrecioTextBox.Size = new System.Drawing.Size(218, 26);
             this.PrecioTextBox.TabIndex = 7;
             this.PrecioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrecioTextBox_KeyPress);
             // 
@@ -217,7 +243,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(367, 22);
+            this.label12.Location = new System.Drawing.Point(342, 24);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(56, 19);
             this.label12.TabIndex = 4;
@@ -251,7 +277,7 @@
             "Celulares"});
             this.TipoSoporteComboBox.Location = new System.Drawing.Point(128, 18);
             this.TipoSoporteComboBox.Name = "TipoSoporteComboBox";
-            this.TipoSoporteComboBox.Size = new System.Drawing.Size(150, 26);
+            this.TipoSoporteComboBox.Size = new System.Drawing.Size(170, 26);
             this.TipoSoporteComboBox.TabIndex = 1;
             // 
             // label9
@@ -384,23 +410,24 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // BuscarClienteButton
+            // IconoPictureBox
             // 
-            this.BuscarClienteButton.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BuscarClienteButton.Image = global::Vistas.Properties.Resources.buscar;
-            this.BuscarClienteButton.Location = new System.Drawing.Point(259, 49);
-            this.BuscarClienteButton.Name = "BuscarClienteButton";
-            this.BuscarClienteButton.Size = new System.Drawing.Size(38, 34);
-            this.BuscarClienteButton.TabIndex = 3;
-            this.BuscarClienteButton.UseVisualStyleBackColor = false;
-            this.BuscarClienteButton.Click += new System.EventHandler(this.BuscarClienteButton_Click);
+            this.IconoPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(213)))), ((int)(((byte)(223)))));
+            this.IconoPictureBox.Image = global::Vistas.Properties.Resources.icono;
+            this.IconoPictureBox.Location = new System.Drawing.Point(1067, 40);
+            this.IconoPictureBox.Name = "IconoPictureBox";
+            this.IconoPictureBox.Size = new System.Drawing.Size(192, 192);
+            this.IconoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.IconoPictureBox.TabIndex = 31;
+            this.IconoPictureBox.TabStop = false;
             // 
             // TicketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(213)))), ((int)(((byte)(223)))));
-            this.ClientSize = new System.Drawing.Size(1031, 529);
+            this.ClientSize = new System.Drawing.Size(1303, 529);
+            this.Controls.Add(this.IconoPictureBox);
             this.Controls.Add(this.TotalAPagarTextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.DescuentoTextBox);
@@ -428,6 +455,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,5 +496,7 @@
         private System.Windows.Forms.Label label10;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Button AgregarButton;
+        private System.Windows.Forms.PictureBox IconoPictureBox;
     }
 }

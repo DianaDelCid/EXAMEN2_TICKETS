@@ -47,13 +47,16 @@
             this.ModificarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.UsuariosDataGridView = new System.Windows.Forms.DataGridView();
-            this.AgregarFotoButton = new System.Windows.Forms.Button();
-            this.FotoPictureBox = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.IconoPictureBox = new System.Windows.Forms.PictureBox();
+            this.AgregarFotoButton = new System.Windows.Forms.Button();
+            this.FotoPictureBox = new System.Windows.Forms.PictureBox();
+            this.VisualizarContraseñaButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FotoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FotoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -252,21 +255,47 @@
             // 
             // UsuariosDataGridView
             // 
+            this.UsuariosDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UsuariosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.UsuariosDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(235)))), ((int)(((byte)(233)))));
             this.UsuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UsuariosDataGridView.Location = new System.Drawing.Point(-2, 263);
             this.UsuariosDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UsuariosDataGridView.Name = "UsuariosDataGridView";
-            this.UsuariosDataGridView.Size = new System.Drawing.Size(644, 158);
+            this.UsuariosDataGridView.Size = new System.Drawing.Size(644, 208);
             this.UsuariosDataGridView.TabIndex = 24;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(480, 13);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 18);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Foto";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // IconoPictureBox
+            // 
+            this.IconoPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(213)))), ((int)(((byte)(223)))));
+            this.IconoPictureBox.Image = global::Vistas.Properties.Resources.icono;
+            this.IconoPictureBox.Location = new System.Drawing.Point(714, 20);
+            this.IconoPictureBox.Name = "IconoPictureBox";
+            this.IconoPictureBox.Size = new System.Drawing.Size(192, 192);
+            this.IconoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.IconoPictureBox.TabIndex = 26;
+            this.IconoPictureBox.TabStop = false;
             // 
             // AgregarFotoButton
             // 
             this.AgregarFotoButton.BackColor = System.Drawing.Color.Teal;
             this.AgregarFotoButton.Enabled = false;
             this.AgregarFotoButton.Image = global::Vistas.Properties.Resources.buscar;
-            this.AgregarFotoButton.Location = new System.Drawing.Point(580, 131);
+            this.AgregarFotoButton.Location = new System.Drawing.Point(600, 141);
             this.AgregarFotoButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AgregarFotoButton.Name = "AgregarFotoButton";
             this.AgregarFotoButton.Size = new System.Drawing.Size(42, 38);
@@ -277,26 +306,26 @@
             // FotoPictureBox
             // 
             this.FotoPictureBox.BackColor = System.Drawing.Color.White;
-            this.FotoPictureBox.Location = new System.Drawing.Point(412, 38);
+            this.FotoPictureBox.Location = new System.Drawing.Point(421, 38);
             this.FotoPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FotoPictureBox.Name = "FotoPictureBox";
-            this.FotoPictureBox.Size = new System.Drawing.Size(162, 131);
+            this.FotoPictureBox.Size = new System.Drawing.Size(173, 141);
             this.FotoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FotoPictureBox.TabIndex = 12;
             this.FotoPictureBox.TabStop = false;
             // 
-            // label7
+            // VisualizarContraseñaButton
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(471, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 18);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "Foto";
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
+            this.VisualizarContraseñaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(213)))), ((int)(((byte)(223)))));
+            this.VisualizarContraseñaButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.VisualizarContraseñaButton.Enabled = false;
+            this.VisualizarContraseñaButton.Image = global::Vistas.Properties.Resources.ojo;
+            this.VisualizarContraseñaButton.Location = new System.Drawing.Point(386, 79);
+            this.VisualizarContraseñaButton.Name = "VisualizarContraseñaButton";
+            this.VisualizarContraseñaButton.Size = new System.Drawing.Size(30, 28);
+            this.VisualizarContraseñaButton.TabIndex = 27;
+            this.VisualizarContraseñaButton.UseVisualStyleBackColor = false;
+            this.VisualizarContraseñaButton.Click += new System.EventHandler(this.VisualizarContraseñaButton_Click);
             // 
             // UsuariosForm
             // 
@@ -304,7 +333,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(213)))), ((int)(((byte)(223)))));
             this.CaptionFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientSize = new System.Drawing.Size(637, 414);
+            this.ClientSize = new System.Drawing.Size(957, 470);
+            this.Controls.Add(this.VisualizarContraseñaButton);
+            this.Controls.Add(this.IconoPictureBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.UsuariosDataGridView);
             this.Controls.Add(this.CancelarButton);
@@ -332,8 +363,9 @@
             this.Text = "UsuariosForm";
             this.Load += new System.EventHandler(this.UsuariosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FotoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FotoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,5 +395,7 @@
         private System.Windows.Forms.DataGridView UsuariosDataGridView;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.PictureBox IconoPictureBox;
+        private System.Windows.Forms.Button VisualizarContraseñaButton;
     }
 }

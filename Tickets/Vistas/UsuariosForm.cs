@@ -28,6 +28,7 @@ namespace Vistas
             CodigoTextBox.Enabled = true;
             NombreTextBox.Enabled = true;
             ContraseñaTextBox.Enabled = true;
+            VisualizarContraseñaButton.Enabled = true;
             CorreoTextBox.Enabled = true;
             RolComboBox.Enabled = true;
             EstaActivoCheckBox.Enabled = true;
@@ -227,7 +228,7 @@ namespace Vistas
             //validar si seleccion un registro
             if (UsuariosDataGridView.SelectedRows.Count > 0) //optiene la fila que el usuario a selecccionado
             {
-                DialogResult resultado = MessageBox.Show("Esta seguro de eliminar el registro", "Advertencia", MessageBoxButtons.YesNo); //ventana para verificar
+                DialogResult resultado = MessageBox.Show("Esta seguro de eliminar el registro", "Continúa ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question); //ventana para verificar
 
                 if (resultado == DialogResult.Yes) //si es un si
                 {
@@ -238,11 +239,11 @@ namespace Vistas
                         LimpiarControles();
                         DeshabilitarControles();
                         TraerUsuarios();
-                        MessageBox.Show("Registro Eliminado", "Bien Hecho", MessageBoxButtons.OK);
+                        MessageBox.Show("Registro Eliminado", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo eliminar registro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No se pudo eliminar registro", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 //si no no hace nada
@@ -270,8 +271,21 @@ namespace Vistas
             //Condicion para evaluar si usuario selecciono imagen
             if (resultado == DialogResult.OK) //Si resultado fue sactifactorio
             {
-                //a la clase Image asignamos el metodo FromFile convierte el tipo de imagen y le pasamos dialog el archivo quqe trae el dialog y se lo pasa al pictubox
                 FotoPictureBox.Image = Image.FromFile(dialog.FileName);//file name para capturar nombre del archivo
+            }
+        }
+
+        //METODO PARA MOSTRAR Y OCULTAR CONTRASEÑA
+        private void VisualizarContraseñaButton_Click(object sender, EventArgs e)
+        {
+            //Validar las propiedades de passwordchar
+            if (ContraseñaTextBox.PasswordChar == '*')
+            {
+                ContraseñaTextBox.PasswordChar = '\0'; //pasamos la propiedad en null para que muestre la contraseña
+            }
+            else
+            {
+                ContraseñaTextBox.PasswordChar = '*'; //oculta contraseña de nuevo
             }
         }
     }
